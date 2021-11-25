@@ -31,12 +31,17 @@ public class EntrepriseImpl implements EntrepriseService {
     }
 
     @Override
-    public Optional<Entreprise> GetEntrepriseByName(String Ent_Name) {
+    public Optional<Entreprise> GetEntrepriseByName(String ent_Name) {
         return Optional.empty();
     }
 
     @Override
     public Optional<Entreprise> GetEntrepriseByImmatricule(int Immatricule) {
         return Optional.empty();
+    }
+
+    @Override
+    public void DeleteById(Long id) {
+        entrepriseRepository.deleteById(id);
     }
 }

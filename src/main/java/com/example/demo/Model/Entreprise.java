@@ -1,5 +1,7 @@
 package com.example.demo.Model;
 
+import com.sun.istack.NotNull;
+
 import javax.persistence.*;
 
 @Entity
@@ -7,44 +9,49 @@ public class Entreprise {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long Entreprise_Id;
+    private Long entreprise_Id;
 
-    private String Email;
-    private String Password;
-    private String Ent_Name;
+    @NotNull
+    private String email;
+    @NotNull
+    private String password;
+    @NotNull
+    private String ent_Name;
+    @NotNull
     private String adresse;
-    private int Immatricule;
+    @NotNull
+    private int immatricule;
 
     public Long getEntreprise_Id() {
-        return Entreprise_Id;
+        return entreprise_Id;
     }
 
     public void setEntreprise_Id(Long entreprise_Id) {
-        Entreprise_Id = entreprise_Id;
+        entreprise_Id = entreprise_Id;
     }
 
     public String getEmail() {
-        return Email;
+        return email;
     }
 
     public void setEmail(String email) {
-        Email = email;
+        this.email = email;
     }
 
     public String getPassword() {
-        return Password;
+        return password;
     }
 
     public void setPassword(String password) {
-        Password = password;
+        this.password = password;
     }
 
     public String getEnt_Name() {
-        return Ent_Name;
+        return ent_Name;
     }
 
     public void setEnt_Name(String ent_Name) {
-        Ent_Name = ent_Name;
+        this.ent_Name = ent_Name;
     }
 
     public String getAdresse() {
@@ -56,10 +63,10 @@ public class Entreprise {
     }
 
     public int getImmatricule() {
-        return Immatricule;
+        return immatricule;
     }
 
     public void setImmatricule(int immatricule) {
-        Immatricule = immatricule;
+        this.immatricule = immatricule;
     }
 }

@@ -1,0 +1,53 @@
+package com.example.demo.Controller;
+
+import com.example.demo.Model.Entreprise;
+import com.example.demo.Service.ServiceImpl.EntrepriseImpl;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+import java.util.Optional;
+
+@RestController
+@RequestMapping("/entreprise")
+public class EntrepriseController {
+
+    @Autowired
+    private EntrepriseImpl entrepriseService;
+
+    @PostMapping("/add")
+    public Entreprise AjouterEntreprise(@RequestBody Entreprise entreprise){
+        return entrepriseService.ajouterEntreprise(entreprise);
+    }
+
+    @GetMapping("/all")
+    public List<Entreprise> getAllEntreprise(){
+        return entrepriseService.getAllEntreprise();
+    }
+
+    @DeleteMapping("/del/{id}")
+    public void delete(@PathVariable("id") Long id){
+        entrepriseService.DeleteById(id);
+    }
+
+    @GetMapping("/get/id/{id}")
+    public Optional<Entreprise> getEntrepriseById(@PathVariable("id") Long id){
+        return entrepriseService.GetEntrepriseById(id);
+    }
+
+    @GetMapping("/name/{ent_name}")
+    public String getEntrepriseById(@PathVariable("ent_name") String ent_name){
+        String result = "verify the service for this method";
+        return  result;
+    }
+
+    @GetMapping("matricule/{matricule}")
+    public String getEntrepriseById(@PathVariable("matricule") int matricule){
+        String result = "verify the service for this method";
+        return  result;
+    }
+
+
+
+
+}

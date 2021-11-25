@@ -12,5 +12,6 @@ public interface EntrepriseService {
     Optional<Entreprise> GetEntrepriseById(Long Entreprise_Id);
     Optional<Entreprise> GetEntrepriseByName(String Ent_Name);
     Optional<Entreprise> GetEntrepriseByImmatricule(int Immatricule);
+    void DeleteById(Long id);
 
 }

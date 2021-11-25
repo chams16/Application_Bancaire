@@ -17,9 +17,9 @@ public class Bank_Agent {
     private String password;
 
 
-    private String Bank_name;
+    private String bank_name;
     private String adresse;
-    private String Agency_address;
+    private String agency_address;
 
 
     public Long getAgentId() {
@@ -55,11 +55,11 @@ public class Bank_Agent {
     }
 
     public String getBank_name() {
-        return Bank_name;
+        return bank_name;
     }
 
     public void setBank_name(String bank_name) {
-        Bank_name = bank_name;
+        this.bank_name = bank_name;
     }
 
     public String getAdresse() {
@@ -71,10 +71,10 @@ public class Bank_Agent {
     }
 
     public String getAgency_address() {
-        return Agency_address;
+        return agency_address;
     }
 
     public void setAgency_address(String agency_address) {
-        Agency_address = agency_address;
+        this.agency_address = agency_address;
     }
 }

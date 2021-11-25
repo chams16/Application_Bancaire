@@ -10,7 +10,7 @@ import java.util.List;
 public interface Bank_AgentService {
 
     Bank_Agent SignUp(Bank_Agent bankAgent);
-    Bank_Agent Login(Bank_Agent bankAgent);
+    String Login(Bank_Agent bankAgent);
 
     List<Bank_Agent> GetAllAgent();
 
