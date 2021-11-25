@@ -5,6 +5,10 @@ import com.example.demo.Repository.EntrepriseRepository;
 import com.example.demo.Service.EntrepriseService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.apache.commons.text.RandomStringGenerator;
+
+
+
 
 import java.util.List;
 import java.util.Optional;
@@ -17,6 +21,14 @@ public class EntrepriseImpl implements EntrepriseService {
 
     @Override
     public Entreprise ajouterEntreprise(Entreprise entreprise) {
+        final String chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+
+        RandomStringGenerator randomStringGenerator = new RandomStringGenerator.Builder()
+                .selectFrom(chars.toCharArray())
+                .build();
+
+        entreprise.setPassword(randomStringGenerator.generate(len));
+
         return entrepriseRepository.save(entreprise);
     }
 

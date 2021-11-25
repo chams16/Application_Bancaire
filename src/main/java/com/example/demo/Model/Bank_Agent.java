@@ -1,5 +1,7 @@
 package com.example.demo.Model;
 
+import com.sun.istack.NotNull;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -12,23 +14,18 @@ public class Bank_Agent {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long agentId;
 
+    @NotNull
     private String name;
+    @NotNull
     private String email;
+    @NotNull
     private String password;
-
-
+    @NotNull
     private String bank_name;
+    @NotNull
     private String adresse;
+    @NotNull
     private String agency_address;
-
-
-    public Long getAgentId() {
-        return agentId;
-    }
-
-    public void setAgentId(Long agentId) {
-        this.agentId = agentId;
-    }
 
     public String getName() {
         return name;
@@ -76,5 +73,13 @@ public class Bank_Agent {
 
     public void setAgency_address(String agency_address) {
         this.agency_address = agency_address;
+    }
+
+    public Long getAgentId() {
+        return agentId;
+    }
+
+    public void setAgentId(Long agentId) {
+        this.agentId = agentId;
     }
 }

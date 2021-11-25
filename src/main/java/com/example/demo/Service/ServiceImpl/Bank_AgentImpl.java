@@ -16,8 +16,8 @@ public class Bank_AgentImpl implements Bank_AgentService {
 
 
     @Override
-    public Bank_Agent SignUp(Bank_Agent bankAgent) {
-        return bankAgentRepository.save(bankAgent);
+    public Bank_Agent SignUp(Bank_Agent agent) {
+        return bankAgentRepository.save(agent);
     }
 
     @Override
