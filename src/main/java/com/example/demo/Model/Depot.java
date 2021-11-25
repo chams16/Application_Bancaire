@@ -1,4 +1,7 @@
 package com.example.demo.Model;
 
-public class Depot extends Transfert{
+import javax.persistence.Entity;
+
+@Entity
+public class Depot extends Transaction {
 }

@@ -13,6 +13,7 @@ public class Entreprise {
     private String Password;
     private String Ent_Name;
     private String adresse;
+    private int Immatricule;
 
     public Long getEntreprise_Id() {
         return Entreprise_Id;
@@ -52,5 +53,13 @@ public class Entreprise {
 
     public void setAdresse(String adresse) {
         this.adresse = adresse;
+    }
+
+    public int getImmatricule() {
+        return Immatricule;
+    }
+
+    public void setImmatricule(int immatricule) {
+        Immatricule = immatricule;
     }
 }
