@@ -7,5 +7,6 @@ import java.util.List;
 public interface CarteService {
 
     List<Carte> getAllCarte();
-    Carte addCarte(Carte carte);
+    Carte addCarte(Carte carte,Long entrepriseId);
+    List<Carte> getCarteByEntreprise(Long entrepriseId);
 }

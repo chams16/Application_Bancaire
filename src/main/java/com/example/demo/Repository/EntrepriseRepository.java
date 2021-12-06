@@ -8,5 +8,6 @@ import java.util.Optional;
 
 @Repository
 public interface EntrepriseRepository extends JpaRepository<Entreprise,Long> {
+    Entreprise findBypassword(String password);
 
 }

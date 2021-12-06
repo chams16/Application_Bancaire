@@ -5,6 +5,7 @@ import com.example.demo.Service.ServiceImpl.EntrepriseImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import javax.transaction.Transactional;
 import java.util.List;
 import java.util.Optional;
 
@@ -15,6 +16,9 @@ public class EntrepriseController {
     @Autowired
     private EntrepriseImpl entrepriseService;
 
+
+
+    @Transactional
     @PostMapping("/add")
     public Entreprise AjouterEntreprise(@RequestBody Entreprise entreprise){
         return entrepriseService.ajouterEntreprise(entreprise);
@@ -22,7 +26,8 @@ public class EntrepriseController {
 
     @GetMapping("/all")
     public List<Entreprise> getAllEntreprise(){
-        return entrepriseService.getAllEntreprise();
+     return entrepriseService.getAllEntreprise();
+
     }
 
     @DeleteMapping("/del/{id}")
@@ -36,7 +41,7 @@ public class EntrepriseController {
     }
 
     @GetMapping("/name/{ent_name}")
-    public String getEntrepriseById(@PathVariable("ent_name") String ent_name){
+    public String getEntrepriseByI(@PathVariable("ent_name") String ent_name){
         String result = "verify the service for this method";
         return  result;
     }
@@ -45,6 +50,11 @@ public class EntrepriseController {
     public String getEntrepriseById(@PathVariable("matricule") int matricule){
         String result = "verify the service for this method";
         return  result;
+    }
+
+    @PostMapping("/update")
+    public Entreprise changePassword(@RequestParam("password") String password){
+        return entrepriseService.modifierPassword(password);
     }
 
 

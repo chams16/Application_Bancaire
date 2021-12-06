@@ -13,5 +13,6 @@ public interface EntrepriseService {
     Optional<Entreprise> GetEntrepriseByName(String Ent_Name);
     Optional<Entreprise> GetEntrepriseByImmatricule(int Immatricule);
     void DeleteById(Long id);
+    Entreprise modifierPassword(String Password);
 
 }

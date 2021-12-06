@@ -1,37 +1,36 @@
 package com.example.demo.Model;
 
+
 import com.sun.istack.NotNull;
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import java.util.Date;
 
-@Getter
-@Setter
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-public class Bank_Agent {
+public class Question {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long agentId;
+    private Long questionId;
 
     @NotNull
-    private String name;
+    private String depositPersonName;
     @NotNull
-    private String email;
+    private Date depositDate;
     @NotNull
-    private String password;
+    private String questionSubject;
     @NotNull
-    private String bank_name;
+    private String questionTitle;
     @NotNull
-    private String adresse;
-    @NotNull
-    private String agency_address;
-
+    private String questionContent;
 
 }

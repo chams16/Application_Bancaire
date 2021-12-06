@@ -1,26 +1,18 @@
 package com.example.demo.Model;
 
+import lombok.*;
+
 import javax.persistence.Entity;
 
+@Data
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
 @Entity
 public class Professionelle extends Compte_Bancaire{
 
-    private String Libellé;
-    private Long Taux_interet;
+    private Long Libellé;
+    private int Taux_interet;
 
-    public String getLibellé() {
-        return Libellé;
-    }
-
-    public void setLibellé(String libellé) {
-        Libellé = libellé;
-    }
-
-    public Long getTaux_interet() {
-        return Taux_interet;
-    }
-
-    public void setTaux_interet(Long taux_interet) {
-        Taux_interet = taux_interet;
-    }
 }

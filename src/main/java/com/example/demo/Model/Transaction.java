@@ -1,7 +1,14 @@
 package com.example.demo.Model;
 
+import lombok.*;
+
 import javax.persistence.*;
 
+@Data
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
 @Entity
 @Inheritance(strategy = InheritanceType.JOINED)
 public abstract class Transaction {

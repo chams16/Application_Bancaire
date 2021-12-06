@@ -10,6 +10,7 @@ public interface CompteService {
 
     List<Compte_Bancaire> getAllAccount();
     Optional<Compte_Bancaire> getAccountById(Long Compte_id);
-    Optional<Compte_Bancaire> getAccountByEntreprise(Entreprise entreprise);
+    List<Compte_Bancaire> getAccountByEntreprise(Long entrepriseId);
+    Compte_Bancaire createNewAccount(Compte_Bancaire compte_bancaire,Long entrepriseId);
 
 }
