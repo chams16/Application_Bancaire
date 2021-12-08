@@ -1,0 +1,14 @@
+package com.example.demo.Exception;
+
+public class InvalidEntityException extends RuntimeException{
+    public InvalidEntityException() {
+    }
+
+    public InvalidEntityException(String message) {
+        super(message);
+    }
+
+    public InvalidEntityException(String message, Throwable cause) {
+        super(message, cause);
+    }
+}
