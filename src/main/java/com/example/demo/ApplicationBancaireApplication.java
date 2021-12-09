@@ -4,13 +4,9 @@ import com.example.demo.Model.Bank_Agent;
 import com.example.demo.Repository.BankAgentRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.mail.SimpleMailMessage;
-import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-import org.springframework.web.bind.annotation.GetMapping;
 
 import javax.annotation.PostConstruct;
 
@@ -21,8 +17,6 @@ public class ApplicationBancaireApplication  {
     private BankAgentRepository bankAgentRepository;
 
 
-    @Autowired
-    private JavaMailSender javaMailSender;
     public static void main(String[] args) {
         SpringApplication.run(ApplicationBancaireApplication.class, args);
     }
@@ -37,7 +31,7 @@ public class ApplicationBancaireApplication  {
         agent.setBank_name("firstBank");
         agent.setAdresse("sousse");
         agent.setAgency_address("sahloul");
-
+        log.info("creating user "+ agent.getName());
         if (!bankAgentRepository.existsByName(agent.getName())) {
             bankAgentRepository.save(agent);
             log.info("creating the admin of bank agency");

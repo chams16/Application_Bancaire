@@ -15,13 +15,20 @@ public class EntrepriseController {
 
     @Autowired
     private EntrepriseImpl entrepriseService;
+    
+
 
 
 
     @Transactional
-    @PostMapping("/add")
+    @PostMapping("/signup")
     public Entreprise AjouterEntreprise(@RequestBody Entreprise entreprise){
         return entrepriseService.ajouterEntreprise(entreprise);
+    }
+
+    @PostMapping("/signin")
+    public String authentifier(@RequestBody Entreprise entreprise){
+        return "authentificatio de l'entreprise en cours ....";
     }
 
     @GetMapping("/all")

@@ -11,7 +11,7 @@ import javax.persistence.*;
 @NoArgsConstructor
 @Entity
 @Inheritance(strategy = InheritanceType.JOINED)
-public abstract class Transaction {
+public  class Transaction {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
